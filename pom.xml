@@ -10,6 +10,7 @@
         <module>client-two</module>
         <module>proxy-one</module>
         <module>proxy-two</module>
+        <module>simplify</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
