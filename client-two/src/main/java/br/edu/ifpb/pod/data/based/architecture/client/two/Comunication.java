@@ -1,5 +1,5 @@
 
-package br.edu.ifpb.pod.data.based.architecture.client.one;
+package br.edu.ifpb.pod.data.based.architecture.client.two;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
  *
  * @author miolivc
  */
-public class Comunication  {
+public class Comunication {
     private static final String HOST = "localhost"; // endereço para o qual a mensagem sera envada
-    private static final Integer PORT = 10999; // porta para o qual a mensagem sera envada
+    private static final Integer PORT = 10998; // porta para o qual a mensagem sera envada
     
 
     public static void main(String[] args) throws IOException {
@@ -32,6 +32,5 @@ public class Comunication  {
         //recupera as respostas 
 
         socket.close();
-
     }
 }

@@ -12,7 +12,11 @@ import java.net.Socket;
  * @author miolivc
  */
 public class MessageWriter implements Runnable{
-    MessageManipulator messageManipulator;
+    private MessageManipulator messageManipulator;
+
+    public MessageWriter() {
+        this.messageManipulator = new MessageManipulator();
+    }
     
     @Override
     public void run() {
@@ -25,7 +29,9 @@ public class MessageWriter implements Runnable{
             InputStream inputStream = socket.getInputStream();
             byte[] b = new byte[1024];
             inputStream.read(b);
-            String message = new String(b);
+            String message = new String(b).trim();
+            
+            System.out.println(message);
 
             // Coloca no arquivo as mensagens enviadas de n1 para n2
             messageManipulator.escreve(message);

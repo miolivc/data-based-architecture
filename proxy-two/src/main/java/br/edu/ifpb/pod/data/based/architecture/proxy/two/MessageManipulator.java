@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author miolivc
  */
 public class MessageManipulator {
-    File arquivo;
+    File arquivo ;
     
     /**
      * persiste a mensagem do client-one para client-two no arquivo messages-n1-n2.txt
@@ -22,7 +22,7 @@ public class MessageManipulator {
      * @throws java.io.IOException 
      */
     public void escreve(String message) throws IOException{
-        this.arquivo = new File("/home/miolivc/messages/messages-n1-n2.txt");
+        arquivo = new File("/home/miolivc/Documents/messages/messages-n1-n2.txt");
         if(! arquivo.exists()){
             arquivo.createNewFile();
         }
@@ -43,7 +43,7 @@ public class MessageManipulator {
      * @throws java.io.FileNotFoundException
      */
     public StringBuilder leitura() throws FileNotFoundException, IOException{
-        this.arquivo = new File("/home/miolivc/messages/messages-n2-n1.txt");
+        arquivo = new File("/home/miolivc/Documents/messages/messages-n2-n1.txt");
         if(! arquivo.exists()){
             arquivo.createNewFile();
         }

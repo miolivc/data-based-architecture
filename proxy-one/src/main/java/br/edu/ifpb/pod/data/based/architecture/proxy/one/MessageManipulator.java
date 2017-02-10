@@ -22,13 +22,17 @@ public class MessageManipulator {
      * @throws java.io.IOException 
      */
     public void escreve(String message) throws IOException{
-        this.arquivo = new File("/home/miolivc/messages/messages-n2-n1.txt");
+        this.arquivo = new File("/home/miolivc/Documents/messages/messages-n2-n1.txt");
         if(! arquivo.exists()){
             arquivo.createNewFile();
         }
         
+        System.out.print("entrou e criou arquivo");
+        
         FileWriter fileWriter = new FileWriter(arquivo, true); // permite escrever num arquivo
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        
+        System.out.println("escrever a mensagem");
         
         bufferedWriter.write(message);
         bufferedWriter.newLine();
@@ -43,7 +47,7 @@ public class MessageManipulator {
      * @throws java.io.FileNotFoundException
      */
     public StringBuilder leitura() throws FileNotFoundException, IOException{
-        this.arquivo = new File("/home/miolivc/messages/messages-n1-n2.txt");
+        this.arquivo = new File("/home/miolivc/Documents/messages/messages-n1-n2.txt");
         if(! arquivo.exists()){
             arquivo.createNewFile();
         }
