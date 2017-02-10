@@ -13,6 +13,10 @@ import java.net.Socket;
  */
 public class MessageReader implements Runnable {
     private MessageManipulator messageManipulator;
+
+    public MessageReader() {
+        this.messageManipulator = new MessageManipulator();
+    }
     
     @Override
     public void run(){

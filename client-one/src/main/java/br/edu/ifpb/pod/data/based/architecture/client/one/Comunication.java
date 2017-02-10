@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 public class Comunication  {
     private static final String HOST = "localhost"; // endereço para o qual a mensagem sera envada
     private static final Integer PORT = 10999; // porta para o qual a mensagem sera envada
-    
 
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket(HOST,PORT); //cria uma conexao
@@ -34,4 +33,5 @@ public class Comunication  {
         socket.close();
 
     }
+    
 }
