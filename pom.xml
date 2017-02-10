@@ -8,6 +8,8 @@
     <modules>
         <module>client-one</module>
         <module>client-two</module>
+        <module>proxy-one</module>
+        <module>proxy-two</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
