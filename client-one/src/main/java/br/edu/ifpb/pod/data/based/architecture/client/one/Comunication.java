@@ -14,18 +14,21 @@ public class Comunication  {
     private static final Integer PORT = 10999; // porta para o qual a mensagem sera envada
     
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket(HOST,PORT); //cria uma conexao
-        String message = JOptionPane.showInputDialog("Digite sua mensagem:");
+        while(true){
+            Socket socket = new Socket(HOST,PORT); //cria uma conexao
+            String message = JOptionPane.showInputDialog("Digite sua mensagem:");
         
-        // Transforma a mensagem num array de bytes
-        byte[] b = new byte[1024];
-        b = message.getBytes(message);
+            // Transforma a mensagem num array de bytes
+            byte[] b = new byte[1024];
+            b = message.getBytes(message);
         
-        // envia para o destinatario 
-        socket.getOutputStream().write(b);
+            // envia para o destinatario 
+            socket.getOutputStream().write(b);
         
-        //recupera resposta 
+            //recupera as respostas 
         
+            socket.close();
         
+        }
     }
 }

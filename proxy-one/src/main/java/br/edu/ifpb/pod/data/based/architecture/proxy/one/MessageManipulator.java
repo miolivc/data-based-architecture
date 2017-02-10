@@ -1,5 +1,5 @@
 
-package br.edu.ifpb.pod.data.based.architecture.proxy.two;
+package br.edu.ifpb.pod.data.based.architecture.proxy.one;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,19 +16,17 @@ import java.io.IOException;
 public class MessageManipulator {
     File arquivo;
     
-    public MessageManipulator() throws IOException{
-        this.arquivo = new File("/home/miolivc/messages/messages-n1-n2.txt");
-        if(! arquivo.exists()){
-            arquivo.createNewFile();
-        }
-    }
-    
     /**
-     * persiste a mensagem do client-two para client-one no arquivo messages-n1-n2.txt
+     * persiste a mensagem do client-two para client-one no arquivo messages-n2-n1.txt
      * @param message 
      * @throws java.io.IOException 
      */
     public void escreve(String message) throws IOException{
+        this.arquivo = new File("/home/miolivc/messages/messages-n2-n1.txt");
+        if(! arquivo.exists()){
+            arquivo.createNewFile();
+        }
+        
         FileWriter fileWriter = new FileWriter(arquivo, true); // permite escrever num arquivo
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         
@@ -45,6 +43,11 @@ public class MessageManipulator {
      * @throws java.io.FileNotFoundException
      */
     public StringBuilder leitura() throws FileNotFoundException, IOException{
+        this.arquivo = new File("/home/miolivc/messages/messages-n1-n2.txt");
+        if(! arquivo.exists()){
+            arquivo.createNewFile();
+        }
+        
         FileReader fileReader = new FileReader(arquivo);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         StringBuilder stringBuilder = new StringBuilder();
